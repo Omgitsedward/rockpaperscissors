@@ -1,64 +1,21 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+  </head>
 
-  function computerPlay(){
-    let play = "";
-    let random_hand = Math.floor(Math.random()*3);
-    switch (random_hand) {
-      case 0 : play = "rock"; break;
-      case 1 : play = "paper"; break;
-      case 2 : play = "scissors"; break;
-    };
-    return play;
-  };
+  <body>
 
-  function singleRound (playerSelection, computerSelection){
-    player = playerSelection.toLowerCase();
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
 
-    if (player == computerSelection)
-      { return "Tie. You both played: " + player }
-    else if (player ==  "rock" && computerSelection == "scissors")
-      { return "Congrats, you won!" }
-    else if (player ==  "paper" && computerSelection == "rock")
-      { return "Congrats, you won!" }
-    else if (player ==  "scissors" && computerSelection == "paper")
-      { return "Congrats, you won!" }
-    else if (player ==  "rock" && computerSelection == "paper")
-      { return "Oh no, you lost." }
-    else if (player ==  "paper" && computerSelection == "scissors")
-      { return "Oh no, you lost." }
-    else (player ==  "scissors" && computerSelection == "rock")
-      { return "Oh no, you lost." }
-  };
+    <div id="display"></div>
 
-function score() {
-  playerSelection = prompt("play a hand");
-  computerSelection = computerPlay();
-  let result = singleRound(playerSelection, computerSelection);
-  console.log(result);
-  if (result == "Congrats, you won!"){ playerScore++; }
-  else if (result == "Oh no, you lost."){ computerScore++; }
-  else score();
-}
-let playerSelection = "";
-let computerSelection = "";
-let playerScore = 0;
-let computerScore = 0;
+  </body>
 
-  function game(){
-    score();
-    score();
-    score();
-    score();
-    score();
-    if (playerScore > computerScore){console.log("You won the match!");}
-    else {console.log("Sucks to suck");}
-    return;
-  }
+  <script src="game.js"></script>
 
-
-
-
-
-
-
-</script>
+</html>
